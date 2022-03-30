@@ -1,0 +1,31 @@
+#navbar {
+   background-color: #0C111B;
+}
+
+.nav-container {
+   
+   justify-content: space-between;
+}
+
+.input-container {
+   display: flex;
+   border-bottom: 1px solid white;
+   align-items: center;
+}
+
+.input-search {
+   background-color: #0C111B;
+   border: none;
+   color: #fff;
+}
+
+.input-search:focus {
+   outline: none;
+   background-color: #191d24;
+ 
+}
+
+.btn-search {
+   background-color: #0C111B; 
+   margin-left: 5px;
+}
