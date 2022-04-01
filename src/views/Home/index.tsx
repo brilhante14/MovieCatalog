@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/INavbar';
+import MovieList from '../../components/MovieList';
 
 import api from '../../services/api';
 
-import './index.css';
+import './styles.css';
 
-interface Movie {
+export interface Movie {
   adult: boolean,
   backdrop_path: string,
   genre_ids: number[],
@@ -22,13 +23,13 @@ interface Movie {
   vote_count: number
 }
 
-function Home() {
-  const [movies, setMovies] = useState<Movie[]>();
+const Home = () => {
   const [page, setPage] = useState(1);
+  const [movies, setMovies] = useState<Movie[] | null>();
 
   useEffect(() => {
     async function loadLatestMovies() {
-      const response = await api.get(`discover/movie?api_key=${process.env.REACT_APP_API_KEY}&sort_by=release_date.desc&page=${page}`);
+      const response = await api.get(`discover/movie?api_key=${process.env.REACT_APP_API_KEY}&sort_by=popularity.desc&page=${page}`);
 
       setMovies(response.data.results);
     }
@@ -36,13 +37,16 @@ function Home() {
     loadLatestMovies();
   }, [page]);
 
-  console.log(movies);
+  
 
   return (
     <div >
      <NavBar />
       
-      <div className="App-header">
+      <div className="container">
+
+        <MovieList title='Popular' movies={movies? movies : undefined} />
+
         <ul>
           {movies?.map((movie: Movie) => (
             <li key={movie.id}>{movie.title}</li>

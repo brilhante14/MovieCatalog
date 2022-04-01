@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./styles.css";
 
 import searchIcon from '../../assets/search.svg';
