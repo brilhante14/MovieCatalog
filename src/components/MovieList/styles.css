@@ -1,10 +1,10 @@
 .movie-list-container{
-   padding: 0 40px;
+   padding: 20px 40px 40px 40px;
 }
 
 .category-container{
    display: flex;
-   padding: 0 46px;
+   padding: 0 70px;
    justify-content: space-between;
    align-items: center;
 }
@@ -12,16 +12,16 @@
 .category-name{
    font-family: Roboto;
    font-weight: 700;
-   font-size: 48px;
-   line-height: 56px;
+   font-size: 30px;
+   line-height: 28px;
 }
 
 .category-btn{
    color: white;
    font-family: Roboto;
    font-weight: 400;
-   font-size: 24px;
-   line-height: 28.13px;
+   font-size: 10px;
+   line-height: 28px;
 }
 
 .category-btn:hover{

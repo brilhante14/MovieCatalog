@@ -1,0 +1,18 @@
+.carousel-inner{
+   position: relative;
+   display: flex;
+   justify-content: center;
+}
+
+.caption {
+   background-color: rgba(12, 17, 27, 0.35);
+   position: absolute;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   left: calc(50% - 200px);  
+   width: 25%;  
+}
+
+h4, p {
+   background-color: transparent;
+}

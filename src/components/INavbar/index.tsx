@@ -6,7 +6,7 @@ import searchIcon from '../../assets/search.svg';
 export default function INavbar() {
    return(
       <>
-      <Navbar id="navbar" expand="lg"  variant="dark">
+      <Navbar id="navbar" expand="lg"  variant="dark" fixed="top">
       <Container >
       <Navbar.Brand href="#">Movie Catalog</Navbar.Brand>
       <Navbar.Toggle />
