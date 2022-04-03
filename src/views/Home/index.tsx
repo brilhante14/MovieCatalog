@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import CarouselPanel from '../../components/CarouselPanel';
-import NavBar from '../../components/INavbar';
 import MovieList from '../../components/MovieList';
 import categories from '../../data/categories';
 
@@ -27,7 +26,6 @@ export interface Movie {
 }
 
 const Home = () => {
-  const [page, setPage] = useState(1);
   const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
   const [latestMovies, setLatestMovies] = useState<Movie[] >([]);
   const [childrenMovies, setChildrenMovies] = useState<Movie[]>([]);
@@ -51,12 +49,6 @@ const Home = () => {
         })
       )
       .catch((err) => alert("Error ocurred while trying to get the movie lists"))
-    // async function loadLatestMovies() {
-    //   const response = await api.get(`discover/movie?api_key=${process.env.REACT_APP_API_KEY}&sort_by=popularity.desc&page=${page}`);
-    //   setPopularMovies(response.data.results);
-    // }
-
-    // loadLatestMovies();
   }, []);
 
   
@@ -65,25 +57,13 @@ const Home = () => {
     <div >
       <CarouselPanel movies={popularMovies.slice(0, 5)} />
       <div className="container">
-        {/* {categories.map((categorie) => (
-          ))} */}
-        <MovieList title={categories[0].title} movies={popularMovies} />
-        <MovieList title={categories[1].title} movies={latestMovies} />
-        <MovieList title={categories[2].title} movies={childrenMovies} />
-        <MovieList title={categories[3].title} movies={dramaMovies} />
-        <MovieList title={categories[4].title} movies={actionMovies} />
-        <MovieList title={categories[5].title} movies={romanceMovies} />
-          
-
-        {/* <ul>
-          {popularMovies.map((movie: Movie) => (
-            <li key={movie.id}>{movie.id}: {movie.title}</li>
-          ))}
-        </ul> 
-      <div>
-        <button onClick={() => setPage(page - 1)}>&lt;</button>
-        <button onClick={() => setPage(page + 1)}>&gt;</button>
-      </div>*/}
+  
+        <div id="popular"><MovieList category='popular' title={categories[0].title} movies={popularMovies} /></div>
+        <div id="release"><MovieList category='release' title={categories[1].title} movies={latestMovies} /></div>
+        <div id="children"><MovieList category='family' title={categories[2].title} movies={childrenMovies} /></div>
+        <div id="drama"><MovieList category='drama' title={categories[3].title} movies={dramaMovies} /></div>
+        <div id="action"><MovieList category='action' title={categories[4].title} movies={actionMovies} /></div>
+        <div id="romance"><MovieList category='romance' title={categories[5].title} movies={romanceMovies} /></div>
       </div>
     </div>
   );

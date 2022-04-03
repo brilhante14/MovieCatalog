@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import "./styles.css"
 
@@ -13,17 +15,17 @@ type productionCountry = {
 }
 
 type Props = {
-   poster_path?: string,
+   id: number,
    title: string,
+   poster_path?: string,
    release_date: string,
    genres: genre[],
    productionCountries: productionCountry[]
-
 }
 
 export default function MovieCard(props: Props){
    return(
-      <div className="card-container">
+      <Link to={`/movie/${props.id}}`}  className="card-container">
          <img 
             src={`https://image.tmdb.org/t/p/w185${props.poster_path}`} 
             alt={`Poster of ${props.title} movie`} 
@@ -40,6 +42,6 @@ export default function MovieCard(props: Props){
                <span key={genre.id} className="subtext">{genre.name}{index < props.genres.length - 1 ? ", " : null}</span>
                )}
          </div>
-      </div>
+      </Link>
    )
 }

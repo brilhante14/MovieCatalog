@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 import searchIcon from '../../assets/search.svg';
 export default function INavbar() {
@@ -8,17 +9,17 @@ export default function INavbar() {
       <>
       <Navbar id="navbar" expand="lg"  variant="dark" fixed="top">
       <Container >
-      <Navbar.Brand href="#">Movie Catalog</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">Movie Catalog</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="nav-container">
       <Nav >
-        <Nav.Link href="#">Popular</Nav.Link>
-        <Nav.Link href="#">Releases</Nav.Link>
+        <Nav.Link as={Link} to="/popular">Popular</Nav.Link>
+        <Nav.Link as={Link} to="/releases">Releases</Nav.Link>
         <NavDropdown title="Genres">
-          <NavDropdown.Item href="#">Drama</NavDropdown.Item>
-          <NavDropdown.Item href="#">Romance</NavDropdown.Item>
-          <NavDropdown.Item href="#">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#">Horror</NavDropdown.Item>
+          <NavDropdown.Item as={Link} to="/genres/10751">Family</NavDropdown.Item>
+          <NavDropdown.Item as={Link} to="/genres/18">Drama</NavDropdown.Item>
+          <NavDropdown.Item as={Link} to="/genres/28">Action</NavDropdown.Item>
+          <NavDropdown.Item as={Link} to="/genres/10749">Romance</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#">See all</NavDropdown.Item>
         </NavDropdown>

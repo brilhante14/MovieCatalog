@@ -8,6 +8,7 @@ import chevronRight from '../../assets/chevron-right.svg'
 import chevronLeft from '../../assets/chevron-left.svg'
 
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 var consts = {
    PREV: "PREV",
@@ -19,8 +20,10 @@ var consts = {
 
 type Props = {
    title: string,
-   movies: Movie[]
+   movies: Movie[],
+   category: string
 }
+
 function myArrow({ type, onClick, isEdge }: any) {
    const pointer = type === consts.PREV ? `${chevronLeft}` : chevronRight
    return (
@@ -39,11 +42,16 @@ export default function MovieList(props: Props) {
     ];
 
    return(
-      <div className="movie-list-container" style={{alignItems: 'center'}}>
+      <div  className="movie-list-container" style={{alignItems: 'center'}}>
          <div className="category-container">
             <p className="category-name">{props.title}</p>
 
-            <Button className="category-btn" style={{color: "#FFF", fontFamily: "Roboto", fontWeight: 400, fontSize: "18px", lineHeight: "28.13px"}} variant="Link">View all</Button>
+            <Button 
+               className="category-btn" 
+               style={{color: "#FFF", fontFamily: "Roboto", fontWeight: 400, fontSize: "18px", lineHeight: "28.13px"}} 
+               variant="Link"
+            >
+               <Link to={`/${props.category}`} style={{color: "white", textDecoration:"none"}}>View all</Link></Button>
          </div>
          
          <Carousel 
@@ -61,9 +69,10 @@ export default function MovieList(props: Props) {
             .map((movie: Movie) => (
                <MovieCard
                   key={movie.id}
+                  id={movie.id}
                   title={movie.title}
-                  genres={[{id: 16, name: "Animation"}, {id: 17, name: "Family"}, {id: 18, name: "Comedy"}, {id: 19, name: "Fantasy"}]}
                   poster_path={movie.poster_path}
+                  genres={[{id: 16, name: "Animation"}, {id: 17, name: "Family"}, {id: 18, name: "Comedy"}, {id: 19, name: "Fantasy"}]}
                   productionCountries={[{iso_3166_1: "US", name: "United States of America"}]}   
                   release_date={movie.release_date}
                />

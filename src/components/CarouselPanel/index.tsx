@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import Carousel from 'react-elastic-carousel';
+import { Link } from "react-router-dom";
 import { Movie } from "../../views/Home";
 
 import "./styles.css";
@@ -15,19 +16,23 @@ const CarouselPanel = (props: Props) => {
          <Carousel 
             isRTL={false} 
             showArrows={false}
-            enableAutoPlay={true} 
+            enableAutoPlay={true}
+            className="carousel-component" 
             autoPlaySpeed={7000}>
             {props.movies?.map((movie: Movie) => (
                <div className="carousel-inner" key={movie.id}>
+                  <Link style={{textDecoration: "none", color: "#FFF"}} to={`/movie/${movie.id}`}>
                   <img 
                      src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`} 
                      alt={`${movie.title} carousel poster`}
-                  />
+                     />
+                     
 
                   <div className="caption">
                     <h4>{movie.title}</h4>
                     <p>{movie.overview.length>200? movie.overview.substring(0, 200)+"..." : movie.overview}</p>
                   </div>
+                  </Link>
                </div>
             ))}
          </Carousel>

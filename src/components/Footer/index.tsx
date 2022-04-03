@@ -17,21 +17,21 @@ const Footer = () => {
     
       <div className="icons">
             <a className="icon"
-					href="https://www.instagram.com/liviabelirocha/"
+					href="https://www.instagram.com/brilhante.gabriel_/"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<AiOutlineInstagram color="white" size="2em"/>
 				</a>
 				<a className="icon"
-					href="https://github.com/liviabelirocha"
+					href="https://github.com/brilhante14"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<AiFillGithub color="white" size="2em" />
 				</a>
 				<a className="icon"
-					href="https://www.linkedin.com/in/lívia-belizário-92997b162/"
+					href="https://www.linkedin.com/in/gabriel-brilhante-4485b0223/"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -39,7 +39,7 @@ const Footer = () => {
 				</a>
       </div>
 
-      <p style={{padding: "1rem 0"}}>Developed by Gabriel Brilhante</p>
+      <p style={{padding: "1rem 0"}}>Developed by Gabriel Brilhante | Source of data and images:</p>
          
       <div className="copyright">
          <img src={Logo} alt="The Movie DB logo" /> 

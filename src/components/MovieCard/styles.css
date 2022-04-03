@@ -1,7 +1,16 @@
 .card-container{
    display: flex;
+   flex: 1 0 19%;
    width: 220px;
    flex-direction: column;
+   padding: 1rem;
+   align-items: flex-start;
+   text-decoration: none;
+}
+
+.card-container:hover{
+   text-decoration: underline;
+   color: white
 }
 
 .poster{
@@ -9,7 +18,9 @@
 }
 
 .title{
+   text-align: start;
    font-size: 18px;
+   color: #FFF;
    font-family: 'DM Sans';
    font-weight: 700;
    line-height: 23px;
