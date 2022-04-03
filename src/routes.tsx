@@ -6,6 +6,7 @@ import Popular from './views/Popular';
 import MoviePage from './views/MoviePage';
 import categories from './data/categories';
 import Gender from './views/Gender';
+import Search from './views/Search';
 
 const routes = () => {
     return(
@@ -16,10 +17,9 @@ const routes = () => {
             <Route path="/"  element={<Home />} />
             <Route path="popular" element={<Popular categorie={categories[0]}/>} />
             <Route path="releases" element={<Popular categorie={categories[1]}/>} />
+            {/* {/* <Route path="genres" element={<Gender />}/> */}
             <Route path="genres/:genreId" element={<Gender/>} />
-            {/* <Route path="genres" element={<Gender />}>
-            </Route> */}
-
+            <Route path="search/:searchQuery" element={<Search/>} />
 
             <Route path="/movie/:movieId" element={<MoviePage />} />
             <Route

@@ -1,10 +1,19 @@
-import React from "react";
-import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import "./styles.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 import searchIcon from '../../assets/search.svg';
+
+import "./styles.css";
+
+type InputEvent = React.ChangeEvent<HTMLInputElement>;
+
 export default function INavbar() {
+  const [inputSearch, setInputSearch] = useState("");
+  
+  const handleChange = (e: InputEvent): void => {
+    setInputSearch(e.target.value);
+  };
    return(
       <>
       <Navbar id="navbar" expand="lg"  variant="dark" fixed="top">
@@ -29,12 +38,13 @@ export default function INavbar() {
           className="input-search"
           type="text"
           placeholder="Search"
+          onChange={handleChange}
           aria-label="Search"
         />
         
-        <Button variant="link" className="btn-search">
+        <Link to={`/search/${inputSearch}`} className="btn-search">
           <img src={searchIcon} alt="Search Button" className="imgSvg" />
-        </Button>
+        </Link>
       </div>
       </Navbar.Collapse>
 
