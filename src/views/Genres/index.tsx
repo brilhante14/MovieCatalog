@@ -1,33 +1,26 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import json from "../../data/genres.json"
-
-import Popular from '../Popular';
 
 import './styles.css';
 
 
-const Gender = () => {
-  let params = useParams();
- 
-  function getGenderTitle():string{
-    const genreFound = json.genres?.find(genre => genre.id === parseInt(params.genreId ? params.genreId : ""));
-    console.log(genreFound)
- 
-    return genreFound? genreFound.name : "";
- }
-
- function getGenderURL(){
-  return `discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${params.genreId}&sort_by=vote_average.desc&vote_count.gte=10` 
-}
+const Genres = () => {
 
   return (
+    <div className='genres-page-container'>
+      <h1 style={{margin: "1rem"}}>Genres available</h1>
+      <div className='genres-container'>
+        {json.genres.map((genre) => (
+          <Link style={{textDecoration: "none"}} to={`/genres/${genre.id}`}>
+            <div key={genre.id} className="genres-items">{genre.name}</div>
+          </Link>
+        ))}
+      </div>
 
-    <Popular categorie={{
-      title: getGenderTitle(),
-      url: getGenderURL()
-    }} />
+    </div>
+    
   );
 }
 
-export default Gender;
+export default Genres;

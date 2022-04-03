@@ -1,0 +1,26 @@
+.genres-container{
+   display: flex;
+   flex: 1 0 19%;
+   flex-wrap: wrap;
+   margin: 1rem;
+   justify-content: center;
+}
+
+.genres-items{
+   display: flex;
+   background: linear-gradient(#31343e, #1a1d29);
+   width: 119px;
+   height: 67px;
+   color: white;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   margin: 30px 17px 0 0;
+   border: 3px solid rgba(255,255,255,.55);
+   transition: 0.5s;
+}
+
+.genres-items:hover{
+   transform: translateY(-8px);
+    border: 3px solid white;
+}

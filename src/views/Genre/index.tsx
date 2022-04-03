@@ -4,9 +4,6 @@ import json from "../../data/genres.json"
 
 import Popular from '../Popular';
 
-import './styles.css';
-
-
 const Genre = () => {
   let params = useParams();
  

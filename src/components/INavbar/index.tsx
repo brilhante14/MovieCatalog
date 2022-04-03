@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 import searchIcon from '../../assets/search.svg';
 
@@ -30,7 +30,7 @@ export default function INavbar() {
           <NavDropdown.Item as={Link} to="/genres/28">Action</NavDropdown.Item>
           <NavDropdown.Item as={Link} to="/genres/10749">Romance</NavDropdown.Item>
           <NavDropdown.Divider />
-          <NavDropdown.Item href="#">See all</NavDropdown.Item>
+          <NavDropdown.Item as={Link} to="/genres">See all</NavDropdown.Item>
         </NavDropdown>
       </Nav>
       <div className="input-container">
