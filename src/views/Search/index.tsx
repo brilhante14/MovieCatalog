@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import Popular from '../Popular';
+import MovieByCategory from '../MovieByCategory';
 
 import './styles.css';
 
@@ -15,7 +15,7 @@ const Search = () => {
 
   return (
 
-    <Popular categorie={{
+    <MovieByCategory categorie={{
       title: "Search results",
       url: getSearchURL()
     }} />

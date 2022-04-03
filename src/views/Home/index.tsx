@@ -25,6 +25,7 @@ export interface Movie {
   vote_count: number
 }
 
+
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
   const [latestMovies, setLatestMovies] = useState<Movie[] >([]);
@@ -50,8 +51,6 @@ const Home = () => {
       )
       .catch((err) => alert("Error ocurred while trying to get the movie lists"))
   }, []);
-
-  
 
   return (
     <div >

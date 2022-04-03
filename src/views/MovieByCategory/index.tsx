@@ -16,7 +16,7 @@ type Props = {
    categorie: Categorie
 }
 
-const Popular = (props: Props) => {
+const MovieByCategory = (props: Props) => {
    const [page, setPage] = useState(1);
    const [movies, setMovies] = useState<Movie[]>([]);
    const [pageNumber, setPageNumber] = useState(1);
@@ -32,16 +32,19 @@ const Popular = (props: Props) => {
    }, [page, pageNumber, props.categorie.url]);
 
    return(
-      <div className="popular-container">
+      <div className="movie-categorie-container">
          <h1>{props.categorie.title}</h1>
 
          <div className="movie-container">
-            {movies.map((movie) => (
+            {movies
+            .filter((movie) => {
+               return movie.poster_path != null
+            })
+            .map((movie) => (
                <MovieCard 
                   key={movie.id}
                   id={movie.id}
-                  genres={[{id: 16, name: "Animation"}, {id: 17, name: "Family"}, {id: 18, name: "Comedy"}, {id: 19, name: "Fantasy"}]}
-                  productionCountries={[{iso_3166_1: "US", name: "United States of America"}]} 
+                  genreIds={movie.genre_ids}
                   title={movie.title} release_date={movie.release_date}
                   poster_path={movie.poster_path} 
                />
@@ -62,4 +65,4 @@ const Popular = (props: Props) => {
    );
 }
 
-export default Popular;
+export default MovieByCategory;

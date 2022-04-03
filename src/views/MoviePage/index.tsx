@@ -25,9 +25,6 @@ export interface MovieInfo{
    release_date: string,
    runtime: number,
    vote_average: number,
-
-   // "belongs_to_collection":{"id":531241,"name":"Spider-Man (Avengers) Collection",,"backdrop_path":"/AvnqpRwlEaYNVL6wzC4RN94EdSd.jpg"},"budget":200000000,"","homepage":"https://www.spidermannowayhome.movie","id":634649,"imdb_id":"tt10872600","original_language":"en","original_title":"Spider-Man: No Way Home","","
-   // popularity":5743.837,"",":],"production_countries":[{"iso_3166_1":"US","name":"United States of America"}],","revenue":1888000000,","spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Tagalog","iso_639_1":"tl","name":""}],"status":"Released","tagline":"The Multiverse unleashed.","title":"Spider-Man: No Way Home","video":false,"":8.2,"vote_count":10832}
 }
 
 const MoviePage = () => {
@@ -71,7 +68,6 @@ const MoviePage = () => {
                   alt={`Logo of ${companie.name}`} 
                   key={companie.id}
                />
-
                ) )}
             </div>
          </div>

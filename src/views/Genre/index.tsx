@@ -2,14 +2,13 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import json from "../../data/genres.json"
 
-import Popular from '../Popular';
+import MovieByCategory from '../MovieByCategory';
 
 const Genre = () => {
   let params = useParams();
  
   function getGenreTitle():string{
     const genreFound = json.genres?.find(genre => genre.id === parseInt(params.genreId ? params.genreId : ""));
-    console.log(genreFound)
  
     return genreFound? genreFound.name : "";
  }
@@ -20,7 +19,7 @@ const Genre = () => {
 
   return (
 
-    <Popular categorie={{
+    <MovieByCategory categorie={{
       title: getGenreTitle(),
       url: getGenreURL()
     }} />

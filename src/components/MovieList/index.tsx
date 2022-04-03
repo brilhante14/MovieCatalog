@@ -72,8 +72,7 @@ export default function MovieList(props: Props) {
                   id={movie.id}
                   title={movie.title}
                   poster_path={movie.poster_path}
-                  genres={[{id: 16, name: "Animation"}, {id: 17, name: "Family"}, {id: 18, name: "Comedy"}, {id: 19, name: "Fantasy"}]}
-                  productionCountries={[{iso_3166_1: "US", name: "United States of America"}]}   
+                  genreIds={movie.genre_ids}
                   release_date={movie.release_date}
                />
             ))}

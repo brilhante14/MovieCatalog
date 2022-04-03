@@ -10,7 +10,8 @@
 
 .card-container:hover{
    text-decoration: underline;
-   color: white
+   color: white;
+   transform: translateY(-8px);
 }
 
 .poster{

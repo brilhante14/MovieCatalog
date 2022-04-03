@@ -1,12 +1,12 @@
-.popular-container{
+.movie-categorie-container{
    display: flex;
+   padding: 1rem 0.5rem;
    flex-direction: column;
 }
 
 .movie-container{
    display: flex;
    flex-wrap: wrap;
-   padding: 1rem 0.5rem;
 }
 
 .pagination  {
