@@ -1,5 +1,6 @@
+
 .page-container {
-  background-color: #0C111B;
+  background-color: var(--backgroundVar);
   color: #FFF;
   margin: 0;
   width: 100vw;

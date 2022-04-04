@@ -28,14 +28,17 @@ export default function MovieCard(props: Props){
             />
             
          <br/>
-         <span className="subtext upper">{props.release_date}</span>
-         <br/>
-         <span className="title">{props.title}</span>
-         <br/>
-         <div>
-            {props.genreIds.map((genreId: number, index) => 
-               <span key={genreId} className="subtext">{getGenreById(genreId)}{index < props.genreIds.length - 1 ? ", " : null}</span>
-               )}
+         
+         <div  className="card-details">
+            <span className="subtext upper">{props.release_date}</span>
+            <br/>
+            <span className="title">{props.title}</span>
+            <br/>
+            <div>
+               {props.genreIds.map((genreId: number, index) => 
+                  <span key={genreId} className="subtext">{getGenreById(genreId)}{index < props.genreIds.length - 1 ? ", " : null}</span>
+                  )}
+            </div>
          </div>
       </Link>
    )

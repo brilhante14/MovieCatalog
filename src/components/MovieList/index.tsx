@@ -27,7 +27,7 @@ type Props = {
 function myArrow({ type, onClick, isEdge }: any) {
    const pointer = type === consts.PREV ? `${chevronLeft}` : chevronRight
    return (
-     <Button variant="Link" onClick={onClick} className="carouselArrows" disabled={isEdge}>
+     <Button aria-label="Arrows" variant="Link" onClick={onClick} className="carouselArrows" disabled={isEdge}>
          <img src={pointer} alt="Search Button"  />
      </Button>
    )

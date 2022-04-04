@@ -39,7 +39,8 @@ const Footer = () => {
 				</a>
       </div>
 
-      <p style={{padding: "1rem 0"}}>Developed by Gabriel Brilhante | Source of data and images:</p>
+      <p style={{padding: "1rem 0"}}>Developed by Gabriel Brilhante</p>
+		<p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
          
       <div className="copyright">
          <img src={Logo} alt="The Movie DB logo" /> 

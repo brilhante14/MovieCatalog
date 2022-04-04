@@ -14,12 +14,14 @@ export default function INavbar() {
   const handleChange = (e: InputEvent): void => {
     setInputSearch(e.target.value);
   };
+
+  
    return(
       <>
       <Navbar id="navbar" expand="lg"  variant="dark" fixed="top">
       <Container >
       <Navbar.Brand as={Link} to="/">Movie Catalog</Navbar.Brand>
-      <Navbar.Toggle />
+      <Navbar.Toggle aria-controls="basic-navbar-nav"/>
       <Navbar.Collapse className="nav-container">
       <Nav >
         <Nav.Link as={Link} to="/popular">Popular</Nav.Link>
@@ -33,6 +35,7 @@ export default function INavbar() {
           <NavDropdown.Item as={Link} to="/genres">See all</NavDropdown.Item>
         </NavDropdown>
       </Nav>
+
       <div className="input-container">
         <input
           className="input-search"
