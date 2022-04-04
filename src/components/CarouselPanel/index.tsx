@@ -19,7 +19,10 @@ const CarouselPanel = (props: Props) => {
             enableAutoPlay={true}
             className="carousel-component" 
             autoPlaySpeed={7000}>
-            {props.movies?.map((movie: Movie) => (
+            {props.movies?.filter((movie: Movie) => {
+               return movie.backdrop_path != null
+            })
+            .map((movie: Movie) => (
                <div className="carousel-inner" key={movie.id}>
                   <Link style={{textDecoration: "none", color: "#FFF"}} to={`/movie/${movie.id}`}>
                   <img 
@@ -27,7 +30,6 @@ const CarouselPanel = (props: Props) => {
                      alt={`${movie.title} carousel poster`}
                      />
                      
-
                   <div className="caption">
                     <h4>{movie.title}</h4>
                     <p>{movie.overview.length>200? movie.overview.substring(0, 200)+"..." : movie.overview}</p>
