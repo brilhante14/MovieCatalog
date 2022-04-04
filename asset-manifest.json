@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/moviecatalog/static/css/main.1f8b7d84.css",
-    "main.js": "/moviecatalog/static/js/main.2bb65780.js",
-    "static/media/copyright-logo.svg": "/moviecatalog/static/media/copyright-logo.de1a664e8d0777ca4ddb2a5a298bcfb6.svg",
-    "index.html": "/moviecatalog/index.html",
-    "static/media/search.svg": "/moviecatalog/static/media/search.c67be2603f7bfcc08f2f6ff42af1f73b.svg",
-    "static/media/chevron-right.svg": "/moviecatalog/static/media/chevron-right.7ae650276af36c821cbe36fa2cc34b20.svg",
-    "static/media/chevron-left.svg": "/moviecatalog/static/media/chevron-left.5e674eedb8f1ac4aaff3902235b6f901.svg",
-    "main.1f8b7d84.css.map": "/moviecatalog/static/css/main.1f8b7d84.css.map",
-    "main.2bb65780.js.map": "/moviecatalog/static/js/main.2bb65780.js.map"
+    "main.css": "/MovieCatalog/static/css/main.1f8b7d84.css",
+    "main.js": "/MovieCatalog/static/js/main.db9db8cb.js",
+    "static/media/copyright-logo.svg": "/MovieCatalog/static/media/copyright-logo.de1a664e8d0777ca4ddb2a5a298bcfb6.svg",
+    "index.html": "/MovieCatalog/index.html",
+    "static/media/search.svg": "/MovieCatalog/static/media/search.c67be2603f7bfcc08f2f6ff42af1f73b.svg",
+    "static/media/chevron-right.svg": "/MovieCatalog/static/media/chevron-right.7ae650276af36c821cbe36fa2cc34b20.svg",
+    "static/media/chevron-left.svg": "/MovieCatalog/static/media/chevron-left.5e674eedb8f1ac4aaff3902235b6f901.svg",
+    "main.1f8b7d84.css.map": "/MovieCatalog/static/css/main.1f8b7d84.css.map",
+    "main.db9db8cb.js.map": "/MovieCatalog/static/js/main.db9db8cb.js.map"
   },
   "entrypoints": [
     "static/css/main.1f8b7d84.css",
-    "static/js/main.2bb65780.js"
+    "static/js/main.db9db8cb.js"
   ]
 }
